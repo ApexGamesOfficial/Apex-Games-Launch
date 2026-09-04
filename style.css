@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="The official Apex Games Launch Center. Countdown to September 20, 2026."
+    >
+
+    <title>Apex Games — Launch Center</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ======================================================
+         NAVIGATION
+    ======================================================= -->
+
+    <header class="topbar">
+        <a class="brand" href="#home" aria-label="Apex Games Launch Center">
+            <span class="brand-mark">A</span>
+
+            <span class="brand-text">
+                <strong>APEX GAMES</strong>
+                <small>LAUNCH CENTER</small>
+            </span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="#launch">Launch</a>
+            <a href="#early-access">Be First</a>
+            <a href="#rewards">Rewards</a>
+            <a href="#merch">Merch</a>
+            <a href="#faq">FAQ</a>
+        </nav>
+
+        <a class="nav-button" href="#early-access">
+            Pre-Register
+        </a>
+    </header>
+
+
+    <!-- ======================================================
+         HERO / COUNTDOWN
+    ======================================================= -->
+
+    <main>
+
+        <section
+            class="hero"
+            id="home"
+        >
+
+            <div class="hero-background" aria-hidden="true">
+                <div class="hero-grid"></div>
+                <div class="hero-glow hero-glow-one"></div>
+                <div class="hero-glow hero-glow-two"></div>
+            </div>
+
+            <div class="hero-content">
+
+                <div class="launch-badge">
+                    <span class="launch-dot"></span>
+                    LAUNCHING SEPTEMBER 20
+                </div>
+
+                <p class="hero-eyebrow">
+                    APEX GAMES PRESENTS
+                </p>
+
+                <h1>
+                    THE NEXT ERA
+                    <span>BEGINS HERE.</span>
+                </h1>
+
+                <p class="hero-description">
+                    A new home for games, players, creators, and the
+                    future of Apex Games.
+                </p>
+
+
+                <!-- COUNTDOWN -->
+
+                <div
+                    class="countdown"
+                    id="launch"
+                    aria-label="Countdown to Apex Games"
+                >
+
+                    <div class="countdown-item">
+                        <strong id="days">00</strong>
+                        <span>Days</span>
+                    </div>
+
+                    <div class="countdown-divider">:</div>
+
+                    <div class="countdown-item">
+                        <strong id="hours">00</strong>
+                        <span>Hours</span>
+                    </div>
+
+                    <div class="countdown-divider">:</div>
+
+                    <div class="countdown-item">
+                        <strong id="minutes">00</strong>
+                        <span>Minutes</span>
+                    </div>
+
+                    <div class="countdown-divider">:</div>
+
+                    <div class="countdown-item">
+                        <strong id="seconds">00</strong>
+                        <span>Seconds</span>
+                    </div>
+
+                </div>
+
+
+                <p class="launch-date">
+                    SEPTEMBER 20, 2026
+                    <span>•</span>
+                    3:00 PM EDT
+                </p>
+
+
+                <div class="hero-actions">
+                    <a
+                        class="button button-primary"
+                        href="#early-access"
+                    >
+                        Be One of the First
+                    </a>
+
+                    <a
+                        class="button button-secondary"
+                        href="#whats-coming"
+                    >
+                        Discover Apex Games
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             LAUNCH STATUS
+        =================================================== -->
+
+        <section class="launch-strip">
+            <div class="launch-strip-inner">
+
+                <span class="status-indicator">
+                    <span class="status-dot"></span>
+                    LAUNCH STATUS
+                </span>
+
+                <strong>
+                    Preparing for September 20, 2026
+                </strong>
+
+                <span class="status-label">
+                    DEVELOPMENT IN PROGRESS
+                </span>
+
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+             BE ONE OF THE FIRST
+        =================================================== -->
+
+        <section
+            class="section early-access"
+            id="early-access"
+        >
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    PRE-LAUNCH REGISTRATION
+                </p>
+
+                <h2>
+                    Be one of the first.
+                </h2>
+
+                <p>
+                    Create your Apex Games Account before launch and
+                    be ready to enter the moment Apex Games goes live.
+                </p>
+
+            </div>
+
+
+            <div class="registration-layout">
+
+                <div class="registration-info">
+
+                    <div class="numbered-feature">
+                        <span>01</span>
+
+                        <div>
+                            <h3>Create your account</h3>
+
+                            <p>
+                                Reserve your Apex Games identity before
+                                launch day.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="numbered-feature">
+                        <span>02</span>
+
+                        <div>
+                            <h3>Get launch-ready</h3>
+
+                            <p>
+                                Your account will work with the Apex Games
+                                account system when the platform launches.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="numbered-feature">
+                        <span>03</span>
+
+                        <div>
+                            <h3>Enter on day one</h3>
+
+                            <p>
+                                When the countdown reaches zero, you'll
+                                already have an account ready to go.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- REGISTRATION FORM -->
+
+                <div class="registration-card">
+
+                    <div class="registration-card-heading">
+                        <span>APEX GAMES ACCOUNT</span>
+                        <h3>Pre-Register</h3>
+
+                        <p>
+                            Join Apex Games before launch.
+                        </p>
+                    </div>
+
+
+                    <form id="registrationForm">
+
+                        <div class="field">
+                            <label for="gamertag">
+                                Gamertag
+                            </label>
+
+                            <input
+                                id="gamertag"
+                                name="gamertag"
+                                type="text"
+                                placeholder="Choose your gamertag"
+                                autocomplete="username"
+                                maxlength="24"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="field">
+                            <label for="displayName">
+                                Display Name
+                            </label>
+
+                            <input
+                                id="displayName"
+                                name="displayName"
+                                type="text"
+                                placeholder="Your display name"
+                                maxlength="40"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="field">
+                            <label for="email">
+                                Email
+                            </label>
+
+                            <input
+                                id="email"
+                                name="email"
+                                type="email"
+                                placeholder="you@example.com"
+                                autocomplete="email"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="field">
+                            <label for="password">
+                                Password
+                            </label>
+
+                            <input
+                                id="password"
+                                name="password"
+                                type="password"
+                                placeholder="Create a password"
+                                autocomplete="new-password"
+                                minlength="8"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="field">
+                            <label for="confirmPassword">
+                                Confirm Password
+                            </label>
+
+                            <input
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                type="password"
+                                placeholder="Confirm your password"
+                                autocomplete="new-password"
+                                minlength="8"
+                                required
+                            >
+                        </div>
+
+
+                        <button
+                            class="button button-primary registration-button"
+                            type="submit"
+                            id="registerButton"
+                        >
+                            Create My Apex Games Account
+                        </button>
+
+
+                        <p
+                            class="form-message"
+                            id="formMessage"
+                            aria-live="polite"
+                        ></p>
+
+                    </form>
+
+
+                    <p class="account-note">
+                        Already have an Apex Games Account?
+                        You don't need to create another one.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             WHAT'S COMING
+        =================================================== -->
+
+        <section
+            class="section dark-section"
+            id="whats-coming"
+        >
+
+            <div class="section-heading centered">
+
+                <p class="eyebrow">
+                    SEPTEMBER 20
+                </p>
+
+                <h2>
+                    What's coming.
+                </h2>
+
+                <p>
+                    Apex Games is being built as a connected place for
+                    games, players, and everything coming next.
+                </p>
+
+            </div>
+
+
+            <div class="feature-grid">
+
+                <article class="feature-card">
+                    <span class="feature-number">01</span>
+
+                    <h3>Discover Games</h3>
+
+                    <p>
+                        Explore games through the Apex Games platform
+                        and build your library.
+                    </p>
+                </article>
+
+
+                <article class="feature-card">
+                    <span class="feature-number">02</span>
+
+                    <h3>Your Library</h3>
+
+                    <p>
+                        Keep your Apex Games collection together in one
+                        connected experience.
+                    </p>
+                </article>
+
+
+                <article class="feature-card">
+                    <span class="feature-number">03</span>
+
+                    <h3>Apex Accounts</h3>
+
+                    <p>
+                        One identity designed to connect your Apex Games
+                        experience.
+                    </p>
+                </article>
+
+
+                <article class="feature-card">
+                    <span class="feature-number">04</span>
+
+                    <h3>Friends</h3>
+
+                    <p>
+                        Find friends, connect, and build your Apex Games
+                        network.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             LAUNCH REWARDS
+        =================================================== -->
+
+        <section
+            class="section rewards-section"
+            id="rewards"
+        >
+
+            <div class="rewards-card">
+
+                <div class="rewards-content">
+
+                    <p class="eyebrow">
+                        LAUNCH REWARDS
+                    </p>
+
+                    <h2>
+                        Launch with us.
+                    </h2>
+
+                    <p>
+                        We're exploring special rewards for people who
+                        join Apex Games during the pre-launch period.
+                    </p>
+
+                    <p class="rewards-disclaimer">
+                        Launch reward details, eligibility, availability,
+                        and terms will be announced separately before any
+                        promotion begins.
+                    </p>
+
+                </div>
+
+
+                <div class="rewards-preview">
+
+                    <div class="reward-item">
+                        <span class="reward-label">
+                            POSSIBLE LAUNCH REWARD
+                        </span>
+
+                        <strong>
+                            Store Reward
+                        </strong>
+
+                        <p>
+                            Details to be announced.
+                        </p>
+                    </div>
+
+
+                    <div class="reward-item">
+                        <span class="reward-label">
+                            POSSIBLE LAUNCH REWARD
+                        </span>
+
+                        <strong>
+                            Apex Games Merch
+                        </strong>
+
+                        <p>
+                            Details to be announced.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             MERCH
+        =================================================== -->
+
+        <section
+            class="section merch-section"
+            id="merch"
+        >
+
+            <div class="merch-layout">
+
+                <div class="merch-visual" aria-hidden="true">
+
+                    <div class="merch-box">
+                        <span>AG</span>
+                    </div>
+
+                    <div class="merch-shirt">
+                        <span>APEX</span>
+                    </div>
+
+                </div>
+
+
+                <div class="merch-content">
+
+                    <p class="eyebrow">
+                        APEX GAMES MERCH
+                    </p>
+
+                    <h2>
+                        The launch collection is coming.
+                    </h2>
+
+                    <p>
+                        We're exploring an Apex Games merchandise
+                        collection for launch.
+                    </p>
+
+                    <span class="coming-soon-label">
+                        COMING SOON
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             FAQ
+        =================================================== -->
+
+        <section
+            class="section faq-section"
+            id="faq"
+        >
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    QUESTIONS
+                </p>
+
+                <h2>
+                    Launch FAQ
+                </h2>
+
+            </div>
+
+
+            <div class="faq-list">
+
+                <details>
+                    <summary>
+                        When does Apex Games launch?
+                    </summary>
+
+                    <p>
+                        Apex Games is scheduled to launch on
+                        September 20, 2026 at 3:00 PM Eastern Daylight
+                        Time.
+                    </p>
+                </details>
+
+
+                <details>
+                    <summary>
+                        What is pre-registration?
+                    </summary>
+
+                    <p>
+                        Pre-registration lets you create your Apex Games
+                        Account before launch so your account is ready
+                        when Apex Games goes live.
+                    </p>
+                </details>
+
+
+                <details>
+                    <summary>
+                        Do I need to pre-register?
+                    </summary>
+
+                    <p>
+                        No. Pre-registration is optional. You'll still
+                        be able to create an account after launch.
+                    </p>
+                </details>
+
+
+                <details>
+                    <summary>
+                        Are launch rewards guaranteed?
+                    </summary>
+
+                    <p>
+                        No launch reward program is active yet. Any
+                        promotion will have its details and terms
+                        announced before it begins.
+                    </p>
+                </details>
+
+
+                <details>
+                    <summary>
+                        Is Apex Games merchandise available yet?
+                    </summary>
+
+                    <p>
+                        Not yet. The launch merchandise collection is
+                        currently being explored.
+                    </p>
+                </details>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             FINAL CTA
+        =================================================== -->
+
+        <section class="final-cta">
+
+            <p class="eyebrow">
+                THE COUNTDOWN HAS BEGUN
+            </p>
+
+            <h2>
+                See you on September 20.
+            </h2>
+
+            <a
+                class="button button-primary"
+                href="#early-access"
+            >
+                Pre-Register
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- ======================================================
+         LAUNCHED SCREEN
+         Hidden until script.js detects launch time.
+    ======================================================= -->
+
+    <section
+        class="launched-screen"
+        id="launchedScreen"
+        hidden
+    >
+
+        <div class="launched-content">
+
+            <p class="eyebrow">
+                THE COUNTDOWN IS OVER
+            </p>
+
+            <h2>
+                APEX GAMES
+                <span>IS HERE.</span>
+            </h2>
+
+            <p>
+                The next era of Apex Games begins now.
+            </p>
+
+            <a
+                class="button button-primary"
+                href="https://apexgamesofficial.github.io/Apex-Games/"
+            >
+                Enter Apex Games
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         FOOTER
+    ======================================================= -->
+
+    <footer>
+
+        <div class="footer-brand">
+            <span class="brand-mark">A</span>
+
+            <div>
+                <strong>APEX GAMES</strong>
+                <p>Creating Worlds. Elevating Reality.</p>
+            </div>
+        </div>
+
+
+        <div class="footer-links">
+            <a href="#home">Launch Center</a>
+            <a href="#early-access">Pre-Register</a>
+            <a href="#faq">FAQ</a>
+
+            <a
+                href="https://apexgamesofficial.github.io/Apex-Games/"
+            >
+                Apex Games
+            </a>
+        </div>
+
+
+        <p class="copyright">
+            © 2026 Apex Games. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- Supabase JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
