@@ -2,12 +2,9 @@
    APEX GAMES LAUNCH CENTER
    script.js
 
-   Official launch:
+   Official Launch:
    September 20, 2026
    3:00 PM EDT
-   America/New_York
-
-   EDT = UTC-04:00
 ========================================================= */
 
 
@@ -15,17 +12,15 @@
    LAUNCH CONFIGURATION
 ========================================================= */
 
-// Keep the timezone offset on this date.
-// September 20, 2026 is during Eastern Daylight Time.
-const LAUNCH_DATE = new Date("2026-09-20T15:00:00-04:00");
+const LAUNCH_DATE =
+    new Date("2026-09-20T15:00:00-04:00");
 
-// Main Apex Games website.
 const APEX_GAMES_URL =
     "https://apexgamesofficial.github.io/Apex-Games/";
 
 
 /* =========================================================
-   ELEMENTS
+   COUNTDOWN ELEMENTS
 ========================================================= */
 
 const daysElement =
@@ -43,18 +38,9 @@ const secondsElement =
 const launchedScreen =
     document.getElementById("launchedScreen");
 
-const registrationForm =
-    document.getElementById("registrationForm");
-
-const registerButton =
-    document.getElementById("registerButton");
-
-const formMessage =
-    document.getElementById("formMessage");
-
 
 /* =========================================================
-   COUNTDOWN HELPERS
+   HELPERS
 ========================================================= */
 
 function padNumber(value) {
@@ -68,6 +54,7 @@ function setCountdownValues(
     minutes,
     seconds
 ) {
+
     if (daysElement) {
         daysElement.textContent =
             padNumber(days);
@@ -91,7 +78,7 @@ function setCountdownValues(
 
 
 /* =========================================================
-   LAUNCH STATE
+   LAUNCH SCREEN
 ========================================================= */
 
 function showLaunchScreen() {
@@ -144,7 +131,7 @@ function updateCountdown() {
 
 
     /* ---------------------------------------------
-       LAUNCHED
+       LAUNCH HAS ARRIVED
     ---------------------------------------------- */
 
     if (distance <= 0) {
@@ -156,7 +143,14 @@ function updateCountdown() {
 
 
     /* ---------------------------------------------
-       TIME CALCULATIONS
+       MAKE SURE LAUNCH SCREEN IS HIDDEN
+    ---------------------------------------------- */
+
+    hideLaunchScreen();
+
+
+    /* ---------------------------------------------
+       CALCULATE REMAINING TIME
     ---------------------------------------------- */
 
     const totalSeconds =
@@ -183,6 +177,10 @@ function updateCountdown() {
         totalSeconds % 60;
 
 
+    /* ---------------------------------------------
+       UPDATE PAGE
+    ---------------------------------------------- */
+
     setCountdownValues(
         days,
         hours,
@@ -199,36 +197,23 @@ function updateCountdown() {
    START COUNTDOWN
 ========================================================= */
 
-// Run immediately so the user doesn't see 00:00:00:00
-// for one second after opening the page.
-
-const countdownActive =
-    updateCountdown();
+updateCountdown();
 
 
-let countdownInterval = null;
+const countdownInterval =
+    window.setInterval(
+        () => {
 
+            const stillActive =
+                updateCountdown();
 
-if (countdownActive) {
+            if (!stillActive) {
 
-    countdownInterval =
-        window.setInterval(
-            () => {
+                window.clearInterval(
+                    countdownInterval
+                );
+            }
 
-                const stillActive =
-                    updateCountdown();
-
-                if (!stillActive) {
-
-                    clearInterval(
-                        countdownInterval
-                    );
-
-                    countdownInterval =
-                        null;
-                }
-
-            },
-            1000
-        );
-}
+        },
+        1000
+    );
