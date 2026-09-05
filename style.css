@@ -1877,3 +1877,34 @@ footer {
     }
 
 }
+/* =========================================================
+   APEX TYPOGRAPHY
+========================================================= */
+
+.hero h1,
+.countdown-item strong,
+.section-heading h2,
+.rewards-content h2,
+.merch-content h2,
+.final-cta h2,
+.launched-content h2 {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 700;
+}
+
+.hero h1 {
+    letter-spacing: -0.045em;
+}
+
+.countdown-item strong {
+    letter-spacing: -0.025em;
+}
+
+.hero-eyebrow,
+.eyebrow,
+.launch-badge,
+.launch-date,
+.countdown-item span {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 700;
+}
