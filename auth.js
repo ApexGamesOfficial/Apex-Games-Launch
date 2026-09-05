@@ -2,7 +2,12 @@
    APEX GAMES LAUNCH CENTER
    auth.js
 
-   Handles pre-launch Apex Games account registration.
+   Handles:
+   - Apex Games account creation
+   - Profile creation
+   - Launch pre-registration
+   - Beta Tester badge eligibility
+   - Live launch registration count
 ========================================================= */
 
 
@@ -35,6 +40,9 @@ const registerButton =
 
 const formMessage =
     document.getElementById("formMessage");
+
+const launchCountElement =
+    document.getElementById("launchRegistrationCount");
 
 
 /* =========================================================
@@ -99,6 +107,94 @@ function cleanGamertag(value) {
 
 
 /* =========================================================
+   FORMAT REGISTRATION COUNT
+========================================================= */
+
+function formatLaunchCount(value) {
+
+    const count =
+        Number(value) || 0;
+
+
+    if (count < 1000) {
+        return count.toLocaleString();
+    }
+
+
+    if (count < 1000000) {
+
+        const shortCount =
+            count / 1000;
+
+        return (
+            shortCount.toFixed(
+                shortCount >= 100
+                    ? 0
+                    : 1
+            ) + "K+"
+        );
+    }
+
+
+    const shortCount =
+        count / 1000000;
+
+    return (
+        shortCount.toFixed(
+            shortCount >= 100
+                ? 0
+                : 1
+        ) + "M+"
+    );
+}
+
+
+/* =========================================================
+   LOAD PUBLIC REGISTRATION COUNT
+========================================================= */
+
+async function loadLaunchRegistrationCount() {
+
+    if (!launchCountElement) {
+        return;
+    }
+
+
+    try {
+
+        const {
+            data,
+            error
+        } =
+            await supabaseClient
+                .rpc(
+                    "get_launch_registration_count"
+                );
+
+
+        if (error) {
+            throw error;
+        }
+
+
+        launchCountElement.textContent =
+            formatLaunchCount(data);
+
+
+    } catch (error) {
+
+        console.error(
+            "Launch registration count error:",
+            error
+        );
+
+        launchCountElement.textContent =
+            "0";
+    }
+}
+
+
+/* =========================================================
    CHECK GAMERTAG
 ========================================================= */
 
@@ -142,7 +238,7 @@ async function registerAccount(event) {
 
 
     /* ---------------------------------------------
-       GET VALUES
+       GET INPUTS
     ---------------------------------------------- */
 
     const gamertagInput =
@@ -161,6 +257,23 @@ async function registerAccount(event) {
         document.getElementById(
             "confirmPassword"
         );
+
+
+    if (
+        !gamertagInput ||
+        !displayNameInput ||
+        !emailInput ||
+        !passwordInput ||
+        !confirmPasswordInput
+    ) {
+
+        showRegistrationMessage(
+            "Registration form is unavailable.",
+            "error"
+        );
+
+        return;
+    }
 
 
     const gamertag =
@@ -231,6 +344,17 @@ async function registerAccount(event) {
 
         showRegistrationMessage(
             "Enter a display name.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    if (!email) {
+
+        showRegistrationMessage(
+            "Enter an email address.",
             "error"
         );
 
@@ -345,7 +469,7 @@ async function registerAccount(event) {
                         displayName,
 
                     status:
-                        "online"
+                        "offline"
                 });
 
 
@@ -355,16 +479,48 @@ async function registerAccount(event) {
 
 
         /* -----------------------------------------
+           CREATE LAUNCH REGISTRATION
+           Database assigns:
+           - registered_at
+           - Beta Tester badge
+        ------------------------------------------ */
+
+        const {
+            error: launchRegistrationError
+        } =
+            await supabaseClient
+                .from(
+                    "launch_registrations"
+                )
+                .insert({
+                    user_id:
+                        user.id
+                });
+
+
+        if (launchRegistrationError) {
+            throw launchRegistrationError;
+        }
+
+
+        /* -----------------------------------------
            SUCCESS
         ------------------------------------------ */
 
         showRegistrationMessage(
-            "You're pre-registered! Your Apex Games Account is ready.",
+            "You're pre-registered! Your Apex Games Account is ready, and you've earned the Beta Tester badge.",
             "success"
         );
 
 
         registrationForm.reset();
+
+
+        /* -----------------------------------------
+           REFRESH COUNTER
+        ------------------------------------------ */
+
+        await loadLaunchRegistrationCount();
 
 
     } catch (error) {
@@ -413,6 +569,31 @@ async function registerAccount(event) {
         }
 
 
+        if (
+            errorText.includes(
+                "duplicate key"
+            ) &&
+            errorText.includes(
+                "launch_registrations"
+            )
+        ) {
+
+            message =
+                "This account is already pre-registered.";
+        }
+
+
+        if (
+            errorText.includes(
+                "pre-registration has ended"
+            )
+        ) {
+
+            message =
+                "Apex Games pre-registration has ended.";
+        }
+
+
         showRegistrationMessage(
             message,
             "error"
@@ -422,9 +603,7 @@ async function registerAccount(event) {
     } finally {
 
         setRegistrationLoading(false);
-
     }
-
 }
 
 
@@ -438,5 +617,7 @@ if (registrationForm) {
         "submit",
         registerAccount
     );
-
 }
+
+
+loadLaunchRegistrationCount();
