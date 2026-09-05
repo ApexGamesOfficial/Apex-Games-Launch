@@ -1908,3 +1908,35 @@ footer {
     font-family: "Rajdhani", sans-serif;
     font-weight: 700;
 }
+/* =========================================================
+   LIVE LAUNCH REGISTRATION COUNT
+========================================================= */
+
+.launch-waiting {
+    margin-top: 28px;
+    text-align: center;
+}
+
+.launch-waiting-title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.launch-waiting-title span {
+    color: #2f7cff;
+}
+
+.launch-waiting-text {
+    margin: 10px 0 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.62);
+}
+
+.launch-waiting-text strong {
+    color: #ffffff;
+}
